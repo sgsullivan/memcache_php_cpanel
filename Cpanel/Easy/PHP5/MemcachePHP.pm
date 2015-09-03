@@ -13,8 +13,8 @@ our $easyconfig = {
 	'when_i_am_off' => sub {
 		my $self = shift;
 		if ( !$self->get_param('makecpphp') ) {
-			if ( -e '/usr/local/lib/php.ini' ) {
-				Cpanel::FileUtils::regex_rep_file( '/usr/local/lib/php.ini', { qr{^\s*extension\s*=\s*"?memcache\.so"?\s*$}is => q{} }, {}, );
+			if ( -e $php_ini ) {
+				Cpanel::FileUtils::regex_rep_file( $php_ini, { qr{^\s*extension\s*=\s*"?memcache\.so"?\s*$}is => q{} }, {}, );
 			}
 		}
 	},
