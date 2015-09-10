@@ -82,7 +82,7 @@ our $easyconfig = {
 
 				if ( $php_init_contents !~ /extension=memcache\.so/ ) {
 					open(my $fh, '>>', $php_ini) or return ( 0, "Couldn't write [$php_ini]: $!" );
-					print $fh 'extension=memcache.so';
+					print $fh "extension=memcache.so\n";
 					close $fh;
 				}
 
